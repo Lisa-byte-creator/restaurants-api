@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.API", "Restaurants.API\Restaurants.API.csproj", "{2F8A478F-1980-491C-BF0F-4BA30C73422C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{7BA82AB5-D9BA-4508-B083-F959875FFF50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application", "Restaurants.Application\Restaurants.Application.csproj", "{E09D8D38-4CE2-4ED9-973F-E6B5926748EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{5D3DCEB9-CADF-4DA2-9EA4-3271EC020483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{2F8A478F-1980-491C-BF0F-4BA30C73422C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8A478F-1980-491C-BF0F-4BA30C73422C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8A478F-1980-491C-BF0F-4BA30C73422C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA82AB5-D9BA-4508-B083-F959875FFF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA82AB5-D9BA-4508-B083-F959875FFF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA82AB5-D9BA-4508-B083-F959875FFF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA82AB5-D9BA-4508-B083-F959875FFF50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09D8D38-4CE2-4ED9-973F-E6B5926748EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09D8D38-4CE2-4ED9-973F-E6B5926748EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09D8D38-4CE2-4ED9-973F-E6B5926748EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09D8D38-4CE2-4ED9-973F-E6B5926748EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3DCEB9-CADF-4DA2-9EA4-3271EC020483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3DCEB9-CADF-4DA2-9EA4-3271EC020483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3DCEB9-CADF-4DA2-9EA4-3271EC020483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3DCEB9-CADF-4DA2-9EA4-3271EC020483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
