@@ -15,6 +15,7 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
     private readonly IWeatherForecastService _weatherForecastService;
+    //private  RestaurantsDbContext restaurantsDbContext;
 
  public WeatherForecastController(ILogger<WeatherForecastController> logger, 
     IWeatherForecastService weatherForecastService) 
