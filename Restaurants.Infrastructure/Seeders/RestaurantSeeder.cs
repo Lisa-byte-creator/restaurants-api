@@ -21,10 +21,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeed
 
     private IEnumerable<Restaurant> GetRestaurants()
     {
-        List<Restaurant> Restaurants = [
-            new(),
-            new()
-        ];
+        
 
         List<Restaurant> restaurants = new List<Restaurant>
 {
@@ -93,7 +90,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeed
     }
 };
 
-        return Restaurants;
+        return restaurants;
     }
     
 }
