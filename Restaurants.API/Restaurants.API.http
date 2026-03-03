@@ -17,4 +17,18 @@ Guid: {{$guid}}
 LocalDate: {{$localDatetime rfc1123}}
 Random-int: {{$randomInt}}
 
-GET {{Restaurants_API_HostAddress}}/api/restaurants/1
+//GET {{Restaurants_API_HostAddress}}/api/restaurants/1
+
+POST {{Restaurants_API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    
+        "Name" : "Ocean Breeze Grill",
+        "Description" : "Fresh seafood and grilled specialties with a coastal vibe.",
+        "Category" : "Seafood",
+        "HasDelivery" : true,
+        "ContactEmail" : "info@oceanbreeze.com",
+        "ContactNumber" :"+27 11 456 7890",
+        "Address" : "new Address"
+}
