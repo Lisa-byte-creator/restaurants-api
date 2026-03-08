@@ -3,7 +3,7 @@ using Restaurants.Domain.Entities;
 
 namespace Restaurants.Infrastructure.Seeders;
 
-internal class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeeder
+public class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeeder
 {
     public async Task Seed()
     {
@@ -38,7 +38,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeed
         {
             Street = "12 Beach Road",
             City = "Cape Town",
-            Postalcode = "8001",
+            PostalCode = "8001",
         },
         Dishes = new List<Dish>
         {
@@ -70,7 +70,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext): IRestaurantSeed
         {
             Street = "45 Vilakazi Street",
             City = "Soweto",
-            Postalcode = "1804",
+            PostalCode = "1804",
         },
         Dishes = new List<Dish>
         {

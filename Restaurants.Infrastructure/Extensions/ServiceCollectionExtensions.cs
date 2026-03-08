@@ -1,24 +1,18 @@
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Repositories;
-using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Seeders;
-using Microsoft.EntityFrameworkCore;
 
 namespace Restaurants.Infrastructure.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static void AddInfrastructure(this IServiceCollection services)
     {
-        services.AddDbContext<RestaurantsDbContext>(options =>
-            options.UseInMemoryDatabase("RestaurantsDb"));
+        // Register repository
+        services.AddScoped<IRestaurantRepository, RestaurantsRepository>();
 
-        services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
-
-        //  register the seeder
+        // Register seeder
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
-
-        return services;
     }
 }

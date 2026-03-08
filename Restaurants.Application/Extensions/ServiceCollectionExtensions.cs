@@ -1,15 +1,19 @@
+using AutoMapper;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Restaurants.Application.Restaurants;
+using FluentValidation;
+using Restaurants.Application.Restaurants.Validators;
 
-namespace Restaurants.Application.Extensions
+namespace Restaurants.Application.Extensions;
+
+public static class ServiceCollectionExtensions
 {
-    public static class ServiceCollectionExtensions
+    public static void AddApplication(this IServiceCollection services)
     {
-        public static void AddApplication(this IServiceCollection services)
-            
-        {
-           
-         services.AddScoped<IRestaurantsService,RestaurantsService>();
-        }
+        services.AddAutoMapper(typeof(ServiceCollectionExtensions).Assembly);
+
+        services.AddMediatR(typeof(ServiceCollectionExtensions).Assembly);
+
+        services.AddValidatorsFromAssemblyContaining<CreateRestaurantCommandValidator>();
     }
 }
