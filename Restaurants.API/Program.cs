@@ -3,13 +3,25 @@ using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 using Restaurants.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+using Serilog.Events;
+using Restaurants.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure();
+builder.Services.AddScoped<ErrorHandlingMiddleware>();
+builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Host.UseSerilog((context, configuration) =>
+
+configuration
+   .ReadFrom.Configuration(context.Configuration)
+
+);
 
 // Register DbContext
 builder.Services.AddDbContext<RestaurantsDbContext>(options =>
@@ -26,6 +38,20 @@ using (var scope = app.Services.CreateScope())
     var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
     await seeder.Seed();
 }
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestTimeLoggingMiddleware>();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseSerilogRequestLogging();
+
+
+
 
 // Configure pipeline
 app.UseHttpsRedirection();
