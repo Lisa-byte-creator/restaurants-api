@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;
 using Restaurants.Application.Restaurants.Validators;
+using Microsoft.Extensions.Options;
 
 namespace Restaurants.Application.Extensions;
 
@@ -17,3 +18,4 @@ public static class ServiceCollectionExtensions
         services.AddValidatorsFromAssemblyContaining<CreateRestaurantCommandValidator>();
     }
 }
+
